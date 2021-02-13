@@ -1,1 +1,20 @@
-!function(e,t){"use strict";if(!Object.prototype.hasOwnProperty.call(e,"lightwidget")){e.addEventListener("message",function(e){if(-1===["lightwidget.com","dev.lightwidget.com","cdn.lightwidget.com","instansive.com"].indexOf(e.origin.replace(/^https?:\/\//i,"")))return JSON.parse(e);var i=function(e){if(-1<e.indexOf("{"))return JSON.parse(e);var i=e.split(":");return{widgetId:i[2].replace("instansive_","").replace("lightwidget_",""),size:i[1]}}(e.data);if(i.size<=0)return!1;[].forEach.call(t.querySelectorAll('iframe[src*="lightwidget.com/widgets/'+i.widgetId+'"],iframe[data-src*="lightwidget.com/widgets/'+i.widgetId+'"],iframe[src*="instansive.com/widgets/'+i.widgetId+'"]'),function(e){e.style.height=i.size+"px"})},!1),e.lightwidget={}}}(window,document);
+&lt;noscript&gt;
+ &lt;iframe src="PARDOT_FORM_URL" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"&gt;&lt;/iframe&gt;
+&lt;/noscript&gt;
+
+&lt;script type="text/javascript"&gt;
+ var form = 'PARDOT_FORM_URL';
+ var params = window.location.search;
+ var thisScript = document.scripts[document.scripts.length - 1];
+ var iframe = document.createElement('iframe');
+
+ iframe.setAttribute('src', form + params);
+ iframe.setAttribute('width', '100%');
+ iframe.setAttribute('height', 500);
+ iframe.setAttribute('type', 'text/html');
+ iframe.setAttribute('frameborder', 0);
+ iframe.setAttribute('allowTransparency', 'true');
+ iframe.style.border = '0';
+
+ thisScript.parentElement.replaceChild(iframe, thisScript);
+&lt;/script&gt;
